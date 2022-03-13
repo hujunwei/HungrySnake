@@ -17,31 +17,31 @@ import static com.boring.game.Direction.*;
  */
 public class GamePanel extends JPanel {
     /* Fixed snake step / body block pixel */
-    static final int BODY_BLOCK_PIXEL = 25;
+    private static final int BODY_BLOCK_PIXEL = 25;
 
     /* Snake attributes */
-    int snakeLength;
-    int[] snakeX = new int[200];
-    int[] snakeY = new int[200];
+    private int snakeLength;
+    private int[] snakeX;
+    private int[] snakeY;
 
     /* Food coordinate */
-    int foodX;
-    int foodY;
+    private int foodX;
+    private int foodY;
 
     /* Snake run direction */
-    Direction direction;
+    private Direction direction;
 
     /* Game state */
-    boolean isStart = false;
+    private boolean isStart = false;
 
     /* Timer of the game */
-    Timer timer;
+    private Timer timer;
 
     /* Game score */
-    int score;
+    private int score;
 
     /* Snake death state */
-    boolean isDead = false;
+    private boolean isDead = false;
 
     public GamePanel() {
         initSnake();
@@ -67,7 +67,7 @@ public class GamePanel extends JPanel {
         /**
          *  Every 100ms scan and handle event.
          */
-        timer = new Timer(150, new ActionListener() {
+        timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isStart && !isDead) {
@@ -130,6 +130,8 @@ public class GamePanel extends JPanel {
     private void initSnake() {
         // snake length
         snakeLength = 3;
+        snakeY = new int[10000];
+        snakeX = new int[10000];
 
         // head
         snakeX[0] = 175;
