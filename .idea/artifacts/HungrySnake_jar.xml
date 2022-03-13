@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HungrySnake:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HungrySnake_jar</output-path>
+    <root id="archive" name="HungrySnake.jar">
+      <element id="module-output" name="HungrySnake" />
+    </root>
+  </artifact>
+</component>
