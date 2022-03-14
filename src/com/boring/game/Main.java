@@ -25,5 +25,7 @@ public class Main {
 
         // By default the window is invisible, this line should be at the end of the 'set' methods, to make sure previous settings were took effect.
         jf.setVisible(true);
+
+        MusicPlayer.playMusic();
     }
 }

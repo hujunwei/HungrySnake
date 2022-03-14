@@ -1,11 +1,23 @@
 package com.boring.game;
 
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+
+import javax.sound.sampled.*;
 import javax.swing.*;
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileInputStream;
+import java.io.File;
+import java.io.IOException;
+
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import static com.boring.game.Direction.*;
 
@@ -67,7 +79,7 @@ public class GamePanel extends JPanel {
         /**
          *  Every 100ms scan and handle event.
          */
-        timer = new Timer(100, new ActionListener() {
+        timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isStart && !isDead) {
